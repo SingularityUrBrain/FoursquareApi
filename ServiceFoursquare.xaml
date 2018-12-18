@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.ServiceFoursquare"
+             xmlns:viewModels="clr-namespace:App1.ViewModels;assembly=App1"
+             xmlns:local="clr-namespace:App1;assembly=App1"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <viewModels:FoursquareViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Label Text="{local:Translate Movie Entertainment}" FontSize="Large" TextColor="DarkBlue"/>
+        <ListView ItemsSource="{Binding FoursquareVenues.response.venues}" SelectedItem="{Binding SelectedVenue}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding name}" FontSize="Medium" TextColor="Black"/>
+                        <Label Text="{Binding location.country}" FontSize="Medium" TextColor="Black"/>
+                        <Label Text="{Binding location.address}" FontSize="Medium" TextColor="Black"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
