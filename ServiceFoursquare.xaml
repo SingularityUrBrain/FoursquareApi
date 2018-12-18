@@ -11,7 +11,6 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <Label Text="{local:Translate Movie Entertainment}" FontSize="Large" TextColor="DarkBlue"/>
         <ListView ItemsSource="{Binding FoursquareVenues.response.venues}" SelectedItem="{Binding SelectedVenue}" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
